@@ -1,0 +1,1 @@
+system("pytest tests/")
