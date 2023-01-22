@@ -1,8 +1,4 @@
-import sys
-sys.path.append('../NewsAPI')
-from app.source.Fetcher import Fetcher
-from app.source.Response import Response
-from app.source.RequestError import RequestError
+from sloom.Fetcher import *
 
 def test_good_request():
     fetcher = Fetcher()
