@@ -20,7 +20,7 @@ def test_get_pages():
         "https://www.washingtonpost.com/politics/2023/01/20/supreme-court-leak-justices-questioned/"
     ]
     responses = fetcher.get_all_pages(urls)
-    assert len(responses) == len(urls)
+    assert responses.count() == len(urls)
 
 def test_filter_pages():
     fetcher = Fetcher()
@@ -30,5 +30,5 @@ def test_filter_pages():
         "https://www.washingtonpost.com/politics/2023/01/20/supreme-court-leak-justices-questioned/"
     ]
     responses = fetcher.get_all_pages(urls)
-    responses = list(filter(fetcher.filterContents, responses))
-    assert len(responses) < len(urls)
+    responses.removeErrors()
+    assert responses.count < len(urls)
