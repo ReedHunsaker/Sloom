@@ -31,4 +31,4 @@ def test_filter_pages():
     ]
     responses = fetcher.get_all_pages(urls)
     responses.removeErrors()
-    assert responses.count < len(urls)
+    assert responses.count() < len(urls)
