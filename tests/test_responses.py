@@ -1,8 +1,6 @@
 import sys
-sys.path.append('../NewsAPI')
-from app.source.Responses import Responses
-from app.source.Response import Response
-from app.source.RequestError import RequestError
+from sloom.Responses import *
+from sloom.Response import *
 import io
 
 def test_bad_append():

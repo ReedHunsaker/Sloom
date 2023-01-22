@@ -1,2 +1,7 @@
 __pycache__/
 .pytest_cache/
+setup.py
+deploy_package.sh
+sloom.egg-info/
+dist/
+build/

@@ -19,7 +19,7 @@ class List:
             Terminal.error(f"Type mismatch:{type(value)} is not {type}")
 
     def filter(self, fn):
-        self.contents = filter(fn, self.contents)
+        self.contents = list(filter(fn, self.contents))
 
     def map(self, fn):
         self.contents = map(fn, self.contents)

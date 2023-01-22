@@ -1,38 +1,17 @@
 # Web Scraper
 
-UNDER DEVELOPMENT
+UNDER DEVELOPMENT v 0.1.1
 
 I don't know what this will be yet but I am planning on making a web scraper package I can continue to work on
 
 ## Setup
 
-To download the pip files use
-
-```ssh 
-ruby create_env.rb
+to get use 
+```
+pip install -i https://test.pypi.org/simple/ sloom
 ```
 
-# Run Example
-
-To run use
-```ssh
-ruby run.rb
+to update use
 ```
-
-
-## Run unit tests
-To test the files use
-
-```ssh
-pytest tests/
-```
-or to test a spcific file use
-```ssh
-pytest tests/{some file}
-```
-
-## Clean Enviroment
-To clean the envioment use
-```ssh
-ruby clean.rb
-```
+ pip install -i https://test.pypi.org/simple/ sloom --upgrade
+ ```

@@ -1,1 +1,0 @@
-system("python3 app")
