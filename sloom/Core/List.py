@@ -8,9 +8,16 @@ class List:
     - reduce, filter, map
     """
     def __init__(self, type) -> None:
-        self.contents = []
+        self.contents = list()
         self.type = type
         pass
+    
+    
+    def _asList(self):
+        """
+        Set the contents type to be of type 'list'
+        """
+        self.contents = list(self.contents)
 
     def append(self, value):
         if isinstance(value, self.type):
@@ -22,11 +29,10 @@ class List:
         self.contents = list(filter(fn, self.contents))
 
     def map(self, fn):
-        self.contents = map(fn, self.contents)
+        self.contents = list(map(fn, self.contents))
 
     def reduce(self, fn):
         return functools.reduce(fn, self.contents)
     
     def count(self):
         return len(self.contents)
-    
