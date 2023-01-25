@@ -8,7 +8,7 @@ class List:
     - reduce, filter, map
     """
     def __init__(self, type) -> None:
-        self.contents = []
+        self.contents = list()
         self.type = type
         pass
 
@@ -22,11 +22,10 @@ class List:
         self.contents = list(filter(fn, self.contents))
 
     def map(self, fn):
-        self.contents = map(fn, self.contents)
+        self.contents = list(map(fn, self.contents))
 
     def reduce(self, fn):
         return functools.reduce(fn, self.contents)
     
     def count(self):
         return len(self.contents)
-    

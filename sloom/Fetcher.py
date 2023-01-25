@@ -6,6 +6,12 @@ from .Responses import *
 
 
 class Fetcher:
+    """
+    Fetch a url and its contents
+    methods:
+    - get_page(url: String) -> Response
+    - get_all_pages(urls: [String]) -> Responses
+    """
     def __init__(self) -> None:
         pass
 
