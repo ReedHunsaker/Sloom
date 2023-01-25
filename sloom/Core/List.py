@@ -11,13 +11,6 @@ class List:
         self.contents = list()
         self.type = type
         pass
-    
-    
-    def _asList(self):
-        """
-        Set the contents type to be of type 'list'
-        """
-        self.contents = list(self.contents)
 
     def append(self, value):
         if isinstance(value, self.type):
