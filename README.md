@@ -1,4 +1,4 @@
-# Web Scraper
+# sloom
 
 UNDER DEVELOPMENT v 0.1.1
 
