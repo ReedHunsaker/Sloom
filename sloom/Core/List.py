@@ -17,7 +17,12 @@ class List:
             self.contents.append(value)
         else:
             Terminal.error(f"Type mismatch:{type(value)} is not {type}")
+            raise TypeError
 
+    def extend(self, iterator):
+        for i in iterator:
+            self.append(i)
+    
     def filter(self, fn):
         self.contents = list(filter(fn, self.contents))
 
