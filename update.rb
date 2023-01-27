@@ -1,1 +1,1 @@
-system("pip install -i https://test.pypi.org/simple/ sloom --upgrade")
+system("pip install sloom --upgrade")
