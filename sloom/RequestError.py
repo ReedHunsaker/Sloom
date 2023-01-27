@@ -9,3 +9,6 @@ class RequestError(ResponseType):
     
     def debug_init(self):
         Terminal.put(f"{self.url} - {bcolors.FAIL}ERROR{bcolors.ENDC}")
+    
+    def __str__(self) -> str:
+        return f"RequestError({self.url[0:10]}, {self.status_code})"

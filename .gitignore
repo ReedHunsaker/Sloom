@@ -5,3 +5,5 @@ deploy_package.sh
 sloom.egg-info/
 dist/
 build/
+version.json
+version.py
