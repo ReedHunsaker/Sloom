@@ -17,13 +17,12 @@ class Scraper:
     """
     def __init__(self, resonpse) -> None:
         self.response = resonpse
-        self.title = None
+        self.title = self.getTitle()
         self.topic = List(Topic)
         self.date = None
         self.url = resonpse.url
         self.origin = self.response.origin
         self._soup = BeautifulSoup(resonpse.text, BS4_SETTING)
-        pass
 
     def getTitle(self):
         """
@@ -31,8 +30,8 @@ class Scraper:
         """
         titles = List(str)
         for title in self._soup.find_all("title"):
-            self.title = title.text
-            return
+            return title.text
+            
     
     def getTopics(self):
         """
