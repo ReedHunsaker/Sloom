@@ -4,13 +4,13 @@ def test_good_request():
     fetcher = Fetcher()
     url = "https://httpbin.org/headers"
     response = fetcher.get_page(url)
-    assert type(response) == type(Response(None, None))
+    assert isinstance(response, Response)
 
 def test_bad_request():
     fetcher = Fetcher()
     url = "https://httpbin.org/hidden-basic-auth/:user/:passwd"
     response = fetcher.get_page(url)
-    assert type(response) == type(RequestError(None, None))
+    assert isinstance(response, RequestError)
 
 def test_get_pages():
     fetcher = Fetcher()

@@ -16,7 +16,7 @@ class List:
         if isinstance(value, self.type):
             self.contents.append(value)
         else:
-            Terminal.error(f"Type mismatch:{type(value)} is not {type}")
+            Terminal.error(f"Type mismatch:{type(value)} is not {self.type}")
             raise TypeError
 
     def extend(self, iterator):
@@ -34,3 +34,18 @@ class List:
     
     def count(self):
         return len(self.contents)
+
+    def first(self):
+        try: 
+            return self.contents[0]
+        except:
+            return None
+    
+    def __str__(self) -> str:
+        text = "" + "["
+        spacer = ", "
+        for i in self.contents:
+            text += i + spacer
+        text = text.removesuffix(spacer)
+        text += "]"
+        return text

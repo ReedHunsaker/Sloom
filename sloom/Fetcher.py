@@ -21,7 +21,7 @@ class Fetcher:
         """
         r = requests.get(url)
         status_code = r.status_code
-        html_content = r.content
+        html_content = r.text
         return Response(html_content, url) if status_code == 200 else RequestError(status_code, url)
 
     def get_all_pages(self, urls):
