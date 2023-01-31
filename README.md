@@ -1,17 +1,28 @@
 # sloom
 
-UNDER DEVELOPMENT v 0.1.1
+UNDER DEVELOPMENT v 0.2.0
 
-I don't know what this will be yet but I am planning on making a web scraper package I can continue to work on
+Sloom is a webscrapper / crawling library
 
 ## Setup
 
 to get use 
 ```
-pip install -i https://test.pypi.org/simple/ sloom
+pip install sloom
 ```
 
 to update use
 ```
- pip install -i https://test.pypi.org/simple/ sloom --upgrade
+ pip install sloom --upgrade
+ ```
+
+ ## Documentation
+
+ Simple program to run sloom:
+
+ ```python
+ import sloom
+
+ sloom.run("https://example.com")
+
  ```
