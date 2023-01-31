@@ -2,7 +2,7 @@
 
 UNDER DEVELOPMENT v 0.2.0
 
-Sloom is a webscrapper / crawling library
+Sloom is a web scraping / crawling library
 
 ## Setup
 
@@ -18,7 +18,11 @@ to update use
 
  ## Documentation
 
- Simple program to run sloom:
+### Simple crawling function.
+ 
+The `run()` function takes a parameter which is the root url. The crawler will start at this URL and go through links found at the root URL.
+
+WARNING: `run()` is an infinte loop.
 
  ```python
  import sloom
