@@ -6,3 +6,5 @@ sloom.egg-info/
 dist/
 build/
 version.py
+playground.py
+rollout.sh

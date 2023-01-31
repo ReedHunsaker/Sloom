@@ -2,8 +2,9 @@ from bs4 import BeautifulSoup
 from .Topic import *
 from .Core.List import *
 from .Core.Terminal import *
+from .href import href
 
-BS4_SETTING = 'html.parser'
+BS4_FEATURES = "lxml"
 
 class Scraper:
     """
@@ -21,7 +22,8 @@ class Scraper:
         self.date = None
         self.url = resonpse.url
         self.origin = self.response.origin
-        self._soup = BeautifulSoup(resonpse.text, BS4_SETTING)
+        self.subdomain = self.response.subdomain
+        self._soup = BeautifulSoup(resonpse.text, features = BS4_FEATURES)
         self.title = self.getTitle()
 
     def getTitle(self) -> str:
@@ -57,6 +59,14 @@ class Scraper:
     
         # return data by retrieving the tag content
         return ' '.join(self._soup.stripped_strings)
+
+    def gethref(self) -> List:
+        """
+        Returns a list of links
+        """
+        hrefList = List(href)
+        hrefList.extend([href(a['href'], self.origin, self.subdomain) for a in self._soup.find_all('a', href = True)])
+        return hrefList
 
     def __str__(self):
         return f"""

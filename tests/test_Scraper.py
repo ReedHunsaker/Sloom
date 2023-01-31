@@ -1,6 +1,6 @@
 # test slooom/scraper.py
-from sloom import Fetcher
 from sloom import Scraper
+from sloom import Fetcher
 import constants as w
 
 # used for all tests
@@ -10,4 +10,3 @@ scraper = Scraper(response)
 
 def test_scraper_getTitle():
     assert scraper.title == w.TEST_WEBSITE_TITLE
-

@@ -22,3 +22,7 @@ class Terminal:
     @staticmethod
     def error(s):
         print(f"> {bcolors.FAIL}ERROR{bcolors.ENDC} - {s}")
+    
+    @staticmethod
+    def found(s):
+        print(f"> {bcolors.OKGREEN}URL FOUND:{bcolors.ENDC} {s}")

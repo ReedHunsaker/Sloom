@@ -29,10 +29,10 @@ class List:
     def map(self, fn):
         self.contents = list(map(fn, self.contents))
 
-    def reduce(self, fn):
+    def reduce(self, fn) -> any:
         return functools.reduce(fn, self.contents)
     
-    def count(self):
+    def count(self) -> int:
         return len(self.contents)
 
     def first(self):
@@ -40,6 +40,9 @@ class List:
             return self.contents[0]
         except:
             return None
+    
+    def forEach(self, fn): 
+        for i in self.contents: fn(i)
     
     def __str__(self) -> str:
         text = "" + "["

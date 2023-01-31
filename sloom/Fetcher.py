@@ -19,7 +19,10 @@ class Fetcher:
         """
         Retrive a single page
         """
-        r = requests.get(url)
+        try:
+            r = requests.get(url)
+        except:
+            return RequestError(404, url)
         status_code = r.status_code
         html_content = r.text
         return Response(html_content, url) if status_code == 200 else RequestError(status_code, url)
