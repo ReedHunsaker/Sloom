@@ -27,6 +27,6 @@ The `run()` function takes a parameter which is the root url. The crawler will s
  ```python
  import sloom
 
- sloom.run("https://example.com")
+ sloom.run("https://www.example.com")
 
  ```
