@@ -1,23 +1,24 @@
 from sloom.Fetcher import *
+import constants as w
 
 def test_good_request():
     fetcher = Fetcher()
-    url = "https://httpbin.org/headers"
+    url = w.TEST_URL
     response = fetcher.get_page(url)
     assert isinstance(response, Response)
 
 def test_bad_request():
     fetcher = Fetcher()
-    url = "https://httpbin.org/hidden-basic-auth/:user/:passwd"
+    url = w.EMPTY_URL
     response = fetcher.get_page(url)
     assert isinstance(response, RequestError)
 
 def test_get_pages():
     fetcher = Fetcher()
     urls = [
-        "https://httpbin.org/headers",
-        "http://example.com/api/123",
-        "http://example.com/api/123"
+        w.TEST_URL,
+        w.TEST_URL,
+        w.TEST_URL
     ]
     responses = fetcher.get_all_pages(urls)
     assert responses.count() == len(urls)
@@ -25,9 +26,9 @@ def test_get_pages():
 def test_filter_pages():
     fetcher = Fetcher()
     urls = [
-        "https://httpbin.org/headers",
-        "https://httpbin.org/hidden-basic-auth/:user/:passwd",
-        "http://example.com/api/123"
+        w.TEST_URL,
+        w.EMPTY_URL,
+        w.TEST_URL
     ]
     responses = fetcher.get_all_pages(urls)
     responses.removeErrors()
