@@ -3,11 +3,14 @@ from .Scraper import Scraper
 from .RequestError import RequestError
 from .Core.Terminal import Terminal
 
+def empty(scraper): return None 
+
 class Crawler:
-    def __init__(self, root) -> None:
+    def __init__(self, root, delegate = empty) -> None:
         self.root = root
         self.fetcher = Fetcher()
         self.visitedSites = set()
+        self.delegate = delegate
 
 
     def crawl(self):
@@ -26,6 +29,7 @@ class Crawler:
     
     def _crawling_(self, response):
         scraper = Scraper(response)
+        self.delegate(scraper)
         list_href = scraper.gethref()
         if list_href.count == 0 or not list_href: return None
         list_href.map(lambda x: x.url())
